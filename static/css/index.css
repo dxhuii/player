@@ -35,6 +35,15 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
+.domain {
+  color: var(--secondary-text-color);
+  text-decoration: none;
+}
+
+.domain:hover {
+  color: var(--button-hover);
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
