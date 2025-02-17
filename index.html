@@ -54,8 +54,7 @@
 
     #playerCnt {
       width: 100%;
-      position: relative;
-      padding-top: 56.25%;
+      aspect-ratio: 16/9;
       margin: 20px 0;
       background: var(--player-bg);
       border-radius: 8px;
@@ -64,9 +63,6 @@
     }
 
     #playerCnt .art-video-player {
-      position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
       height: 100%;
     }
@@ -220,7 +216,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polygon points="5 3 19 12 5 21 5 3"></polygon>
           </svg>
-          点击播放
+          <span>点击播放</span>
         </button>
       </div>
       <button class="theme-switch" onclick="toggleTheme()">
@@ -482,7 +478,7 @@
       const loadIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>';
       const loadingIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="loading-icon"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>';
       btn.disabled = loading;
-      btn.innerHTML = loading ? loadingIcon + ' 加载中...' : loadIcon + ' 加载播放列表';
+      btn.querySelector('span').innerHTML = loading ? ' 加载中...' : ' 点击播放';
       if (loading) {
         btn.style.opacity = '0.7';
         btn.style.cursor = 'not-allowed';
