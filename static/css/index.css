@@ -1,0 +1,226 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --secondary-text-color: #666666;
+  --border-color: #e0e0e0;
+  --input-bg: #f5f5f5;
+  --button-bg: #2196F3;
+  --button-hover: #1976D2;
+  --player-bg: #000000;
+  --transition-duration: 0.3s;
+}
+
+[data-theme='dark'] {
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+  --secondary-text-color: #999999;
+  --border-color: #333333;
+  --input-bg: #333333;
+  --button-bg: #2196F3;
+  --button-hover: #1976D2;
+  --player-bg: #000000;
+}
+
+* {
+  box-sizing: border-box;
+  transition: background-color var(--transition-duration), color var(--transition-duration), border-color var(--transition-duration);
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#playerCnt {
+  width: 100%;
+  aspect-ratio: 16/9;
+  margin: 20px 0;
+  background: var(--player-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#playerCnt .art-video-player {
+  width: 100%;
+  height: 100%;
+}
+
+.art-video-player .art-info .art-info-panel .art-info-item:nth-child(2) {
+  display: none !important;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controls-left {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 8px 16px;
+  background: var(--button-bg);
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background: var(--button-hover);
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 12px;
+  margin: 10px 0;
+  background: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  resize: vertical;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--button-bg);
+  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1);
+}
+
+.title-container {
+  text-align: center;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.title-logo {
+  width: 36px;
+  height: 36px;
+  transition: transform 0.3s;
+}
+
+.title-logo:hover {
+  transform: rotate(360deg);
+}
+
+.subtitle {
+  text-align: center;
+  margin: -10px 0 20px;
+  color: var(--secondary-text-color);
+  font-size: 14px;
+}
+
+.theme-switch {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  border-radius: 4px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.theme-switch:hover {
+  background: var(--input-bg);
+}
+
+.theme-switch:active {
+  transform: translateY(0);
+}
+
+.language-switch {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M2 4l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+
+.language-switch:hover {
+  background-color: var(--input-bg);
+}
+
+.language-switch:focus {
+  outline: none;
+  border-color: var(--button-bg);
+  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1);
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--secondary-text-color);
+  font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
+  .title-container {
+    font-size: 20px;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .controls-left {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}

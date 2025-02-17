@@ -1,53 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
   <meta charset="UTF-8">
   <meta name="referrer" content="no-referrer">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/svg+xml" href="./static/img/favicon.svg">
-  <meta name="keywords" content="Free Online Video Player,m3u8 player,mp4 player,video streaming,online watching,multi-episode playback,web video player,free video player,HTML5 player">
-  <meta name="description" content="A free online video player that supports m3u8 and mp4 formats. Features include multi-episode playback, fullscreen mode, speed control, picture-in-picture, and playback memory. Simple and user-friendly interface for all your video streaming needs.">
-  <title>Free Online M3U8 and MP4 Video Player</title>
-  <link href="./static/css/index.css" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="../static/img/favicon.svg">
+  <meta name="keywords" content="在线视频播放器,m3u8播放器,mp4播放器,视频解析,在线观看,多集播放,免费播放器,在线解析,视频播放">
+  <meta name="description" content="一款完全免费的在线视频播放器，支持m3u8和mp4格式，提供多集连续播放、全屏播放、倍速播放、画中画等功能，支持播放进度记忆，界面简洁易用，无需下载安装。">
+  <title>免费m3u8和mp4在线视频播放器</title>
+  <link href="../static/css/index.css" rel="stylesheet" />
   <script defer src="https://d.vv.chat/script.js" data-website-id="691ab4f0-9191-40bb-8b3c-da5d2ffb3ab1"></script>
 </head>
 
 <body>
   <div class="container">
     <h1 class="title-container">
-      <img src="./static/img/favicon.svg" alt="logo" class="title-logo">
-      Free Online M3U8 and MP4 Video Player
+      <img src="../static/img/favicon.svg" alt="logo" class="title-logo">
+      免费m3u8和mp4在线视频播放器
     </h1>
-    <p class="subtitle">Support m3u8 and mp4 | Multi-Episode | Memory Play | Speed Control</p>
-    <textarea id="playlist" placeholder="Enter video URLs (one per line)"></textarea>
+    <p class="subtitle">支持m3u8和mp4格式 | 多集连播 | 记忆播放 | 倍速播放</p>
+    <textarea id="playlist" placeholder="请输入视频地址（每行一个）"></textarea>
     <div class="controls">
       <div class="controls-left">
         <button onclick="loadPlaylist()" id="loadBtn">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polygon points="5 3 19 12 5 21 5 3"></polygon>
           </svg>
-          <span>Play</span>
+          <span>点击播放</span>
         </button>
       </div>
       <button class="theme-switch" onclick="toggleTheme()">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
-        Toggle Theme
+        切换主题
       </button>
       <select class="language-switch" onchange="toggleLanguage()">
-        <option value="en" selected>English</option>
-        <option value="zh">中文</option>
+        <option value="en">English</option>
+        <option value="zh" selected>中文</option>
       </select>
     </div>
     <div id="playerCnt"></div>
     <div class="footer">
-      © <script>document.write(new Date().getFullYear())</script> Online Video Player All Rights Reserved
+      © <script>document.write(new Date().getFullYear())</script> 在线视频播放器 版权所有
     </div>
   </div>
   <script src="https://lib.baomitu.com/artplayer/latest/artplayer.min.js"></script>
   <script src="https://lib.baomitu.com/hls.js/latest/hls.min.js"></script>
-  <script type="module" src="./static/js/index.js"></script>
+  <script type="module" src="../static/js/index.js"></script>
 </body>
+
 </html>
