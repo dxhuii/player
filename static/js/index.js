@@ -77,10 +77,6 @@ async function initPlayer(url) {
   const isM3u8 = url.includes('.m3u8') && !url.includes('@@noad');
   let playUrl = url.includes('@@') ? url.split('@@')[1] : url;
 
-  if (isM3u8) {
-    playUrl = `https://dd.vv.chat/m3u8/1?link=${playUrl}`
-  }
-
   player = new Artplayer({
     container: '#playerCnt',
     poster: 'https://unmc.bj.bcebos.com/1709555341156_728368261.jpg',
